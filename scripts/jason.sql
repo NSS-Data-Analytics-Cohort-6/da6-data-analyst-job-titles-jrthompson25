@@ -61,18 +61,16 @@ FROM data_analyst_jobs
 WHERE review_count > 5000 AND company IS NOT NULL; 
 */
 
-
---*************Still working on this one*************************
 --10. Add the code to order the query in #9 from highest to lowest average star rating. Which company with more than 5000 reviews across all locations in the dataset has the highest star rating? What is that rating? It is a tie between Unilever, General Motors, Nike, American Express, Microsoft, and Kaiser Permanente at 4.2.
 
 /* SELECT company, ROUND(AVG(star_rating),2) AS avg_star_rating    
 FROM data_analyst_jobs
-WHERE review_count > 5000 AND company IS NOT NULL
+WHERE review_count > 5000 AND company IS NOT NULL  
 GROUP BY company
 ORDER BY avg_star_rating DESC; */
 
 --11. Find all the job titles that contain the word ‘Analyst’. How many different job titles are there? 754 
-/*SELECT DISTINCT title
+/* SELECT DISTINCT title
 FROM data_analyst_jobs
 WHERE title LIKE '%Analyst%';
 
@@ -80,8 +78,8 @@ SELECT COUNT( DISTINCT title)
 FROM data_analyst_jobs
 WHERE title LIKE '%Analyst%';*/
 
---************************Stuck on the last two
---12. How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common? Data
+
+--12. How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common? 4, Data
 /* SELECT COUNT (DISTINCT title) 
 FROM data_analyst_jobs
 WHERE upper(title) NOT LIKE '%ANALY%';
